@@ -1,26 +1,13 @@
 const { DataTypes } = require('sequelize');
+const {sequelize} = require (`../connection/connect`)
 
-module.exports = (sequelize) => {
-
-
-    const Vechile = sequelize.define('Vechile', {
-        vechileType: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        vechileNumber: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        noRent: {
-            type: DataTypes.STRING,
-            allowNull: false
-
-        },
-
-    }, {
-        tableName: 'Vechiles',
-        timestamps: true
-    });
-    return Vechile
-}
+  const Vehicle= sequelize.define('Vehicle', {   
+    vehicleType: { type: DataTypes.STRING, allowNull: false },
+    vehicleNumber: { type: DataTypes.STRING, allowNull: false },  
+    noRent: { type: DataTypes.BOOLEAN, allowNull: false }
+  }, {
+    tableName: 'vehicles',
+    timestamps: true
+  });
+ 
+module.exports = Vehicle
