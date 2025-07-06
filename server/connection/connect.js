@@ -1,8 +1,5 @@
 const { Sequelize } = require('sequelize');
-// const User = require(`../models/userSchema`)
-// const Vechile = require(`../models/vechileSchema`)
-// const Rental = require(`../models/rentalSchema`)
-console.log(process.env.DATABASE, process.env.USERNAME, process.env.PASSWORD);
+
 
 const sequelize = new Sequelize(process.env.DATABASE, process.env.USERNAME, process.env.PASSWORD, {
   host: process.env.LOCALHOST,
